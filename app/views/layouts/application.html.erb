@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= render "layouts/meta" %>
     <title>CapitalizeManagement</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <%= stylesheet_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
     <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-scroller">
+      <%= render "layouts/navbar" %>
+      <div class="container-fluid page-body-wrapper">
+        <%= render "layouts/settings-panel" %>
+        <%= render "layouts/sidebar" %>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <%= yield %>
+          </div>
+          <%= render "layouts/footer" %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
