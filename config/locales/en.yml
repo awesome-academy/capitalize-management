@@ -1,1 +1,77 @@
 en:
+  devise:
+    confirmations:
+      new:
+        resend_conf: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        welcome: "Welcome"
+        you_can_confirm: "You can confirm your account email through the link below:"
+        confirm_my_account: "Confirm my account"
+      email_changed:
+        hello: "Hello"
+        we_contacting: "We're contacting you to notify you that your email is being changed to"
+        we_contacting_you: "We're contacting you to notify you that your email has been changed to"
+      password_change:
+        hello: "Hello"
+        we_contacting: "We're contacting you to notify you that your password has been changed."
+      reset_password_instructions:
+        hello: "Hello"
+        someone_has: "Someone has requested a link to change your password. You can do this through the link below."
+        change_my_password: "Change my password"
+        if_you: "If you didn't request this, please ignore this email."
+        your_password: "Your password won't change until you access the link above and create a new one."
+      unlock_instructions:
+        hello: "Hello"
+        your_account: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        click_the_link: "Click the link below to unlock your account:"
+        unlock_my_account: "Unlock my account"
+    passwords:
+      edit:
+        change_your_password: "Change your password"
+        new_password: "New password"
+        new: "new-password"
+        confirm_new_password: "Confirm new password"
+        off_1: "off"
+        change_my_password: "Change my password"
+      new:
+        forgot_your_password: "Forgot your password?"
+        email: "email"
+        send_me: "Send me reset password instructions"
+    registrations:
+      edit:
+        edit: "Edit"
+        email: "email"
+        currently_waiting: "Currently waiting confirmation for:"
+        new: "new-password"
+        leave_blank: "(leave blank if you don't want to change it)"
+        characters_minimun: "characters minimum"
+        we_need_your: "(we need your current password to confirm your changes)"
+        current_password: "current-password"
+        update: "Update"
+        cancel_my_account: "Cancel my account"
+        unhappy: "Unhappy?"
+        cancel_my_account: "Cancel my account"
+        are_you_sure: "Are you sure?"
+        back: "Back"
+      new:
+        sign_up: "Sign up"
+        email: "email"
+        new_password: "new-password"
+    sessions:
+      new:
+        log_in: "Log in"
+        email: "email"
+        current_password: "current-password"
+    shared:
+      links:
+        log_in: "Log in"
+        sign_up: "Sign up"
+        forgot_your_password: "Forgot your password?"
+        did_receive: "Didn't receive confirmation instructions?"
+        did_receive_unlock: "Didn't receive unlock instructions?"
+        sign_in: "Sign in with #{OmniAuth::Utils.camelize(provider)}"
+    unlocks:
+      new:
+        resend_unlock_instructions: "Resend unlock instructions"
+        email: "email"
