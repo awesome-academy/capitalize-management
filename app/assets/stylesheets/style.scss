@@ -21524,7 +21524,7 @@ body.avgrund-active {
 
 /* Js-grid */
 .jsgrid .jsgrid-button {
-  background-image: url(../images/sprites/jsgrid-icons.png); }
+  background-image: url(sprites/jsgrid-icons.png); }
 
 .jsgrid .jsgrid-grid-header {
   border: 1px solid #e8e8e8;
@@ -22558,23 +22558,23 @@ div.tagsinput {
 /* === Landing screens === */
 /* Auth */
 .auth.login-full-bg {
-  background: url("../images/auth/login_1.jpg");
+  background: url("auth/login_1.jpg");
   background-size: cover; }
 
 .auth .login-half-bg {
-  background: url("../images/auth/login_2.jpg");
+  background: url("auth/login_2.jpg");
   background-size: cover; }
 
 .auth.register-full-bg {
-  background: url("../images/auth/register_1.jpg");
+  background: url("auth/register_1.jpg");
   background-size: cover; }
 
 .auth .register-half-bg {
-  background: url("../images/auth/register_2.jpg");
+  background: url("auth/register_2.jpg");
   background-size: cover; }
 
 .auth.lock-full-bg {
-  background: url("../images/auth/lock_bg.jpg");
+  background: url("auth/lock_bg.jpg");
   background-size: cover; }
 
 .auth .lock-profile-img {
@@ -22745,7 +22745,7 @@ div.tagsinput {
           margin-right: 0; } }
 
 .landing-page .top-banner {
-  background: url("../images/landing-page/landing-bg.jpg");
+  background: url("landing-page/landing-bg.jpg");
   background-size: cover; }
   .landing-page .top-banner .demo-image img {
     max-width: 500px; }
@@ -22831,7 +22831,7 @@ div.tagsinput {
       font-family: "poppins-regular", sans-serif; }
 
 .landing-page .footer {
-  background: url("../images/samples/footer_bg.jpg");
+  background: url("samples/footer_bg.jpg");
   margin: 0;
   width: 100%;
   padding-top: 80px;
