@@ -6,4 +6,5 @@
 //= require settings
 //= require todolist
 //= require dashboard
+//= require toastr
 //= require_tree .
