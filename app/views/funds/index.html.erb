@@ -1,0 +1,25 @@
+<%= provide :title, t(".funds") %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"><%= t ".funds" %></h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th><%= t ".fund_name" %></th>
+              <th><%= t ".total_money" %></th>
+              <th><%= t ".created_at" %></th>
+              <th><%= t ".update_at" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @funds %>
+          </tbody>
+        </table>
+        <%== pagy_nav(@pagy) %>
+      </div>
+    </div>
+  </div>
+</div>

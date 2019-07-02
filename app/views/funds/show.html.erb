@@ -1,0 +1,15 @@
+<%= provide :title, @fund.name %>
+
+<div class="row">
+  <div class="col-12 card">
+    <div class="card-body">
+      <address>
+        <p class="font-weight-bold"><%= @fund.name %></p>
+          $ <%= @fund.total_money %>
+        <p><%= t ".created_at" %>: <%= l @fund.created_at, format: :full %></p>
+        <p><%= t ".updated_at" %>: <%= l @fund.updated_at, format: :full %></p>
+      </address>
+      <%= link_to t(".edit_but"), edit_fund_path(@fund), class: "btn btn-primary btn-sm float-right" %>
+    </div>
+  </div>
+</div>

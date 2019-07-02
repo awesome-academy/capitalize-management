@@ -1,4 +1,8 @@
 en:
+  time:
+    formats:
+      full: "%H:%M-%d/%m/%Y"
+
   devise:
     confirmations:
       new:
@@ -92,3 +96,30 @@ en:
       new:
         resend_unlock_instructions: "Resend unlock instructions"
         email: "email"
+
+  controllers:
+    funds_controller:
+      created: "Fund created!"
+      create_unsuccess: "Create unsuccessful!"
+      fund_updated: "Fund updated"
+      you_not_permited: "You not permited"
+
+  funds:
+    form:
+      name: "Name"
+      enter_name: "Enter name"
+      total_money: "Total money"
+      enter_total_money: "Enter total money"
+      form_cancel: "Cancel"
+    edit:
+      add_new_fund: "Add new fund"
+      edit_fund: "Edit fund"
+      submit: "Save"
+    new:
+      submit: "Create"
+      add_new_fund: "Add new fund"
+      create_fund: "Create fund"
+    show:
+      create_at: "Create at"
+      update_at: "Update at"
+      edit_but: "Edit"
