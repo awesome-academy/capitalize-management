@@ -1,3 +1,7 @@
+<% if @resource.skip_password %>
+  <h2><%= t ".you_became_contributor" %></h2>
+  <p><%= t ".your_pw" %><%= @resource.password %></p>
+<% end %>
 <p><%= t ".welcome" %> <%= @email %>!</p>
 
 <p><%= t ".you_can_confirm" %></p>

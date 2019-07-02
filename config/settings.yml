@@ -1,3 +1,4 @@
 controller:
   funds_controller:
-    page: 1
+    page: 10
+random_pw: 8

@@ -2,20 +2,20 @@ en:
   time:
     formats:
       full: "%H:%M-%d/%m/%Y"
-
   layouts:
     navbar:
       no_name: "no name"
       profile: "Profile"
       signout: "Signout"
       number_bell: "7"
-
   devise:
     confirmations:
       new:
         resend_conf: "Resend confirmation instructions"
     mailer:
       confirmation_instructions:
+        you_became_contributor: "You became a contributor"
+        your_pw: "With your password: "
         welcome: "Welcome"
         you_can_confirm: "You can confirm your account email through the link below:"
         confirm_my_account: "Confirm my account"
@@ -89,30 +89,30 @@ en:
         total_statement: "29"
 
       new:
-        sign_up: "Đăng ký"
-        require_fill: "Bạn hãy nhập đầy đủ các thông tin dưới đây"
-        username: "Tên người dùng"
-        fullname: "Họ và tên"
+        sign_up: "Sign up"
+        require_fill: "Please enter all information below"
+        username: "User name"
+        fullname: "Full name"
         email: "Email"
-        pw_type: "Nhập mật khẩu"
-        pw: "Mật khẩu"
-        min_pw: "Ít nhất"
-        character: "ký tự"
-        pw_retype: "Nhập lại mật khẩu"
-        confirm_pw: "Xác thực mật khẩu"
-        has_account: "Bạn đã có tài khoản?"
-        login_now: "Đăng nhập ngay"
+        pw_type: "Password"
+        pw: "Password"
+        min_pw: "Least"
+        character: "character"
+        pw_retype: "Password confirm"
+        confirm_pw: "Confirmation Password"
+        has_account: "You have already an account?"
+        login_now: "Sign in now"
         new_password: "new-password"
         session: "sessions"
     sessions:
       new:
-        log_in: "Đăng nhập"
-        require_fill: "Nhập thông tin để đăng nhập"
-        email: "Email của bạn"
-        remember_pw: "Nhớ mật khẩu"
+        log_in: "Sign In"
+        require_fill: "Please enter information to log in"
+        email: "Your email"
+        remember_pw: "Remember password"
         password: "passwords"
         registration: "registrations"
-        forgot_pw: "Quên mật khẩu"
+        forgot_pw: "Forgot password"
         current_password: "current-password"
     shared:
       links:
@@ -141,6 +141,8 @@ en:
       total_money: "Total money"
       enter_total_money: "Enter total money"
       form_cancel: "Cancel"
+      contributors: "Contributors"
+      add_contributors: "Add contributors"
     edit:
       add_new_fund: "Add new fund"
       edit_fund: "Edit fund"
@@ -153,3 +155,6 @@ en:
       create_at: "Create at"
       update_at: "Update at"
       edit_but: "Edit"
+    user_fields:
+      mail_contributor: "Email's contributor"
+      remove_contributors: "Remove contributors"

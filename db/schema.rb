@@ -50,8 +50,10 @@ ActiveRecord::Schema.define(version: 2019_07_03_084624) do
   create_table "funds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "total_money"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_funds_on_user_id"
   end
 
   create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,25 +91,24 @@ ActiveRecord::Schema.define(version: 2019_07_03_084624) do
   end
 
   create_table "user_funds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "current_money"
-    t.integer "money_limit"
-    t.boolean "founder"
+    t.integer "current_money", default: 0
+    t.integer "money_limit", default: 0
     t.bigint "user_id"
     t.bigint "fund_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["founder"], name: "index_user_funds_on_founder"
     t.index ["fund_id"], name: "index_user_funds_on_fund_id"
     t.index ["user_id"], name: "index_user_funds_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
-    t.string "name"
-    t.string "encrypted_password", default: "", null: false
+    t.string "encrypted_password", default: ""
     t.integer "mobile_number"
     t.text "address"
     t.string "facebook"
+    t.string "name", default: ""
+    t.string "avatar"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -137,6 +138,7 @@ ActiveRecord::Schema.define(version: 2019_07_03_084624) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "days", "user_funds"
   add_foreign_key "days", "weeks"
+  add_foreign_key "funds", "users"
   add_foreign_key "histories", "user_funds"
   add_foreign_key "statements", "user_funds"
   add_foreign_key "user_funds", "funds"

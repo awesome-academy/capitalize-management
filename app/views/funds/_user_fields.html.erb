@@ -1,0 +1,10 @@
+<div class="nested-fields"><br>
+  <div class="form-group">
+    <%= f.label :email, t(".mail_contributor") %>
+    <%= f.email_field :email, class: "form-control", placeholder: "Email", id: "email" %>
+    <%= f.hidden_field :skip_password, value: true %>
+  </div>
+  <%= link_to_remove_association t(".remove_contributors"), f %>
+</div>
+
+
