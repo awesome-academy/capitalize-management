@@ -1,48 +1,144 @@
-<h2><%= t ".edit" %> <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: t(".email") %>
+<div class="row user-profile">
+  <div class="col-lg-4 side-left d-flex align-items-stretch">
+    <div class="row">
+      <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body avatar">
+            <h4 class="card-title"><%= t ".info" %></h4>
+              <%= image_tag current_user.avatar %>
+            <p class="name"><%= @user.name %></p>
+            <p class="designation"><%= t ".ui_ux" %></p>
+            <%= link_to @user.email, "#", class: "d-block text-center text-dark " %>
+            <% if current_user.mobile_number.present? %>
+              <%= link_to @user.mobile_number, "#", class: "d-block text-center text-dark"
+                %>
+            <% else %>
+              <%= link_to t(".phone_number_default"), "#", class: "d-block text-center text-dark " %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 stretch-card">
+        <div class="card">
+          <div class="card-body overview">
+            <ul class="achivements">
+              <li><p><%= t ".total_funds" %></p><p><%= t ".funds" %></p></li>
+              <li><p><%= t ".total_win_rate" %></p><p><%= t ".win_rate" %></p></li>
+              <li><p><%= t ".total_statement" %></p><p><%= t ".statement" %></p></li>
+            </ul>
+            <div class="wrapper about-user">
+              <h4 class="card-title mt-4 mb-3"><%= t ".About" %></h4>
+              <p><%= t ".lorem_ipsum" %></p>
+            </div>
+            <div class="info-links">
+              <%= link_to "#", class: "social-link" do %>
+                <i class="mdi mdi-facebook text-gray"></i>
+                <%= @user.facebook %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div><%= t ".currently_waiting" %> <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i><%= t ".leave_blank" %></i><br />
-    <%= f.password_field :password, autocomplete: t(".new") %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> <%= t ".characters_minimun" %></em>
-    <% end %>
+  <div class="col-lg-8 side-right stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <div class="wrapper d-block d-sm-flex align-items-center justify-content-between">
+          <h4 class="card-title mb-0"><%= t ".details"%></h4>
+          <ul class="nav nav-tabs tab-solid tab-solid-primary mb-0" id="myTab" role="tablist">
+            <li class="nav-item">
+              <%= link_to t(".info"),"#info", class: "nav-link active", id: "info-tab", data: {toggle: "tab"}, role: "tab", aria: {controls: "info", expanded: "true"} %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t(".avatar"),"#avatar", class: "nav-link", id: "avatar-tab", data: {toggle: "tab"}, role: "tab", aria: {controls: "avatar"} %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t(".security"),"#security", class: "nav-link", id: "security-tab", data: {toggle: "tab"}, role: "tab", aria: {controls: "security"} %>
+            </li>
+          </ul>
+        </div>
+        <div class="wrapper">
+          <hr>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info">
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="form-group">
+                  <%= f.label :name %>
+                  <%= f.text_field :name, class: "form-control", placeholder: t(".name") %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :mobile_number %>
+                  <%= f.telephone_field :mobile_number, class: "form-control", placeholder: t(".mobile_number") %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :email %>
+                  <%= f.email_field :email, class: "form-control", placeholder: t(".email") %>
+                </div>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div><%= t ".currently_waiting" %> <%= resource.unconfirmed_email %></div>
+                <% end %>
+                <div class="form-group">
+                  <%= f.label :address %>
+                  <%= f.text_area :address, class: "form-control", placeholder: t(".address") %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :facebook %>
+                  <%= f.text_field :facebook, class: "form-control", placeholder: t(".facebook") %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :current_password, t(".current_password_label") %>
+                  <%= f.password_field :current_password, class: "form-control", placeholder: t(".current_password") %>
+                </div>
+                <div class="form-group mt-5">
+                  <%= f.submit t(".update"), class: "btn btn-success mr-2" %>
+                  <%= link_to t(".cancel"), root_path, class: "btn btn-outline-danger" %>
+                </div>
+              <% end %>
+            </div>
+            <div class="tab-pane fade" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
+              <div class="wrapper mb-5 mt-4">
+                <span class="badge badge-warning text-white"><%= t ".note" %></span>
+                <p class="d-inline ml-3 text-muted"><%= t ".image_size" %></p>
+              </div>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+                  <%= f.file_field :avatar, class: "dropify", data: {"max-file-size": "1mb", "default-file": url_for(current_user.avatar)} %>
+                <div class="form-group mt-3">
+                  <%= f.password_field :current_password, class: "form-control", placeholder: t(".current_password") %>
+                </div>
+                <div class="form-group mt-5">
+                  <%= f.submit t(".update"), class: "btn btn-success mr-2" %>
+                  <%= link_to t(".cancel"), root_path, class: "btn btn-outline-danger" %>
+                </div>
+              <% end %>
+            </div>
+            <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="form-group">
+                  <%= f.label :password, t(".password") %>
+                  <%= f.password_field :password, class: "form-control", placeholder: t(".new") %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :password_confirmation %>
+                  <%= f.password_field :password_confirmation, class: "form-control", placeholder: t(".conf_pw") %>
+                </div>
+                <div class="form-group">
+                  <%= f.label :current_password, t(".current_password_label") %>
+                  <%= f.password_field :current_password, class: "form-control", placeholder: t(".current_password") %>
+                </div>
+                <div class="form-group mt-5">
+                  <%= f.submit t(".update"), class: "btn btn-success mr-2" %>
+                  <%= link_to t(".cancel"), root_path, class: "btn btn-outline-danger" %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: t(".new") %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i><%= t ".we_need_your" %></i><br />
-    <%= f.password_field :current_password, autocomplete: t(".current_password") %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar, accept: "image/jpeg, image/jpg, image/gif, image/png",  class: "file-upload-default" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit t ".update" %>
-  </div>
-<% end %>
-
-<h3><%= t ".cancel_my_account" %></h3>
-
-<p><%= t ".unhappy" %> <%= button_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: t(".are_you_sure") }, method: :delete %></p>
-
-<%= link_to t(".back"), :back %>
+</div>
+<%= javascript_include_tag "dropifyDemo" %>

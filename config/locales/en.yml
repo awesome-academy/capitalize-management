@@ -3,6 +3,13 @@ en:
     formats:
       full: "%H:%M-%d/%m/%Y"
 
+  layouts:
+    navbar:
+      no_name: "no name"
+      profile: "Profile"
+      signout: "Signout"
+      number_bell: "7"
+
   devise:
     confirmations:
       new:
@@ -45,19 +52,42 @@ en:
     registrations:
       edit:
         edit: "Edit"
-        email: "email"
+        email: "Change email"
         currently_waiting: "Currently waiting confirmation for:"
-        new: "new-password"
-        leave_blank: "(leave blank if you don't want to change it)"
+        new: "Enter you new password"
         characters_minimun: "characters minimum"
-        we_need_your: "(we need your current password to confirm your changes)"
-        current_password: "current-password"
+        current_password_label: "Current password"
+        current_password: "Enter you current password"
         update: "Update"
+        password: "New password"
+        conf_pw: "Enter you confirm password"
+        cancel: "Cancel"
         cancel_my_account: "Cancel my account"
         unhappy: "Unhappy?"
         cancel_my_account: "Cancel my account"
         are_you_sure: "Are you sure?"
         back: "Back"
+        name: "Change user name"
+        mobile_number: "Change mobile number"
+        address: "Change address"
+        facebook: "Change facebook"
+        ui_ux: "-  UI/UX  -"
+        phone_number_default: "1-(555)-555-5555"
+        details: "Details"
+        info: "Info"
+        avatar: "Avatar"
+        security: "Security"
+        note: "Note : "
+        image_size: "Image size is limited to not greater than 1MB ."
+        funds: "Funds"
+        win_rate: "Win rate"
+        statement: "Statement"
+        about: "About"
+        lorem_ipsum: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam consectetur ex quod."
+        total_funds: "34"
+        total_win_rate: "23"
+        total_statement: "29"
+
       new:
         sign_up: "Đăng ký"
         require_fill: "Bạn hãy nhập đầy đủ các thông tin dưới đây"
