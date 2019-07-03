@@ -5,6 +5,5 @@
 //= require misc
 //= require settings
 //= require todolist
-//= require dashboard
-//= require toastr
-//= require_tree .
+//= require cable
+//= require alert
