@@ -7,3 +7,6 @@
 //= require todolist
 //= require cable
 //= require alert
+//= require dashboard
+//= require dropify
+//= require_tree .

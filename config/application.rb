@@ -14,5 +14,6 @@ module CapitalizeManagement
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
     config.assets.paths << Rails.root.join("vendor", "assets", "images")
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.active_storage.variant_processor = :vips
   end
 end
