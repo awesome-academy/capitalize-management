@@ -70,7 +70,7 @@
                 </div>
                 <div class="form-group">
                   <%= f.label :mobile_number %>
-                  <%= f.telephone_field :mobile_number, class: "form-control", placeholder: t(".mobile_number") %>
+                  <%= f.text_field :mobile_number, class: "form-control form-control-sm", data: {inputmask: Settings.registrations.edit.phone_number_default} %>
                 </div>
                 <div class="form-group">
                   <%= f.label :email %>
@@ -141,4 +141,5 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag "user" %>
 <%= javascript_include_tag "dropifyDemo" %>

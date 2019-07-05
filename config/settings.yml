@@ -1,4 +1,15 @@
 controller:
   funds_controller:
     page: 10
-random_pw: 8
+    random_pw: 8
+    page: 1
+  statements_controller:
+    page: 5
+
+statements:
+  form:
+    up_down: [["Up", 1],["Down", 0]]
+
+registrations:
+  edit:
+    phone_number_default:  "'alias': '999-999-9999'"

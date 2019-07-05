@@ -1,0 +1,30 @@
+<%= form_for [:fund, @statement] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="form-group">
+    <%= f.label :money, t(".money") %>
+    <%= f.text_field :money, class: "form-control", placeholder: t(".enter_money") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :guess, t(".guess") %></br>
+    <%= f.select :guess, Settings.statements.form.up_down, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :stop_loss, t(".stop_loss") %>
+    <%= f.text_field :stop_loss, class: "form-control", placeholder: t(".enter_stop_loss") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :take_profit, t(".take_profit") %>
+    <%= f.text_field :take_profit, class: "form-control", placeholder: t(".enter_take_profit") %>
+  </div>
+  <div class="form-group">
+    <%= f.label :loss, t(".loss") %>
+    <%= f.text_field :loss, class: "form-control", readonly: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :profit, t(".profit") %>
+    <%= f.text_field :profit, class: "form-control", readonly: true %>
+  </div>
+  <%= f.button yield(:button_text), class: "btn btn-success mr-2" %>
+  <%= link_to t(".form_cancel"), :back, class: "btn btn-light" %>
+<% end %>

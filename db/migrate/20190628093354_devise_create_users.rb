@@ -3,7 +3,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :email, null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.integer :mobile_number
+      t.string :mobile_number
       t.text :address
       t.string :facebook
       t.string :name, default: ""
