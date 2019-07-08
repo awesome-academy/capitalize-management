@@ -1,5 +1,5 @@
 Devise.setup do |config|
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = "hoanghung965580@gmail.com"
   require "devise/orm/active_record"
 
   config.case_insensitive_keys = [:email]
@@ -12,4 +12,5 @@ Devise.setup do |config|
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
   config.reset_password_within = 6.hours
   config.sign_out_via = :delete
+  config.password_length = 6..128
 end

@@ -1,5 +1,6 @@
 class FundsController < ApplicationController
   before_action :load_fund, except: %i(new create index)
+  before_action :authenticate_user!
 
   def index
     @pagy, @funds = pagy Fund.list, items: Settings.controller.funds_controller.page
@@ -12,8 +13,7 @@ class FundsController < ApplicationController
   end
 
   def create
-    @fund = Fund.new fund_params
-    @fund.users << current_user
+    @fund = Fund.new fund_params.merge user_id: current_user.id
     if @fund.save
       flash[:success] = t(".created")
       redirect_to funds_path
@@ -42,6 +42,6 @@ class FundsController < ApplicationController
   def load_fund
     return if @fund = Fund.find_by(id: params[:id])
     flash[:error] = t(".you_not_permited")
-    redirect_to funds_path
+    redirect_to root_path
   end
 end
