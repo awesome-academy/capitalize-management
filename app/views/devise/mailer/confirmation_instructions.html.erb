@@ -1,4 +1,4 @@
-<% if @resource.skip_password %>
+<% if @resource.skip_password_validation %>
   <h2><%= t ".you_became_contributor" %></h2>
   <p><%= t ".your_pw" %><%= @resource.password %></p>
 <% end %>

@@ -1,0 +1,35 @@
+<%= provide :button_text_add, t(".add") %>
+<div class="modal fade" id="user_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= t ".add_user" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_with url: add_user_funds_path, id: "add_user" do |f| %>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :email, t(".email") %>
+            <%= f.text_field :email, class: "form-control", placeholder: t(".enter_email") %>
+          </div>
+          <div class="form-group">
+            <%= f.label :money, t(".money") %>
+            <div class="input-group">
+              <%= f.number_field :money, class: "form-control", placeholder:
+              t(".enter_money") %>
+              <div class="input-group-append">
+                <span class="input-group-text">USD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= f.button yield(:button_text_add), class: "btn btn-success" %>
+          <button type="button" class="btn btn-light" data-dismiss="modal" onclick="clearUser()"><%= t ".form_cancel" %></button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

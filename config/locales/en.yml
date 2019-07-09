@@ -2,6 +2,12 @@ en:
   time:
     formats:
       full: "%H:%M-%d/%m/%Y"
+
+  decorators:
+    user:
+      exist: "Exist"
+      not_exist: "New"
+
   layouts:
     navbar:
       no_name: "no name"
@@ -153,9 +159,13 @@ en:
       enter_name: "Enter name"
       total_money: "Total money"
       enter_total_money: "Enter total money"
-      form_cancel: "Cancel"
-      contributors: "Contributors"
-      add_contributors: "Add contributors"
+      form_cancel: "Close"
+      add_user: "Add User"
+      users: "Users"
+      user_email: "Email"
+      money: "Money invest"
+      action: "Delete"
+      role: "Role"
     edit:
       add_new_fund: "Add new fund"
       edit_fund: "Edit fund"
@@ -168,7 +178,17 @@ en:
       create_at: "Create at"
       update_at: "Update at"
       edit_but: "Edit"
+    modal:
+      add_user: "Add User"
+      email: "Email"
+      enter_email: "Enter email"
+      money: "Money Invest"
+      enter_money: "Enter money invest"
+      add: "Add"
+      form_cancel: "Cancel"
     user_fields:
+      email: "Email"
+      enter_email: "Enter email"
       mail_contributor: "Email's contributor"
       remove_contributors: "Remove contributors"
     index:

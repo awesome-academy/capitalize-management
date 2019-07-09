@@ -8,17 +8,17 @@ class User < ApplicationRecord
 
 
   before_create :set_password
-  attr_accessor :skip_password
+  attr_accessor :skip_password_validation
 
   protected
   def password_required?
-    return false if skip_password
+    return false if skip_password_validation
     super
   end
 
   private
   def set_password
-    if skip_password
+    if skip_password_validation
       self.password = Devise.friendly_token.first(Settings.random_pw)
       self.password_confirmation = password
     end
