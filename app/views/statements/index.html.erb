@@ -1,0 +1,29 @@
+<%= provide :title, t(".statements") %>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title"><%= t ".statements" %></h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th><%= t ".date" %></th>
+              <th><%= t ".money" %></th>
+              <th><%= t ".guess" %></th>
+              <th><%= t ".stop_loss" %></th>
+              <th><%= t ".take_profit" %></th>
+              <th><%= t ".status" %></th>
+              <th><%= t ".loss" %></th>
+              <th><%= t ".profit" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @statements %>
+          </tbody>
+        </table>
+        <%= pagy_bootstrap_nav(@pagy_statement).html_safe %>
+      </div>
+    </div>
+  </div>
+</div>

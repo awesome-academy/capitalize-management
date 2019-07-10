@@ -1,0 +1,10 @@
+<tr>
+  <td><%= l statement.created_at, format: :full %></td>
+  <td><%= statement.money %></td>
+  <td><%= label_tag nil, statement.guess_tag[:name], class: statement.guess_tag[:class] %></td>
+  <td class="text-danger"><%= statement.stop_loss %>%<i class="mdi mdi-arrow-down"></i></td>
+  <td class="text-success"><%= statement.take_profit %>%<i class="mdi mdi-arrow-up"></i></td>
+  <td><%= label_tag nil, statement.status_tag[:name], class: statement.status_tag[:class] %></td>
+  <td><%= statement.loss %></td>
+  <td><%= statement.profit %></td>
+</tr>

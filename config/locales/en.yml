@@ -8,6 +8,14 @@ en:
       profile: "Profile"
       signout: "Signout"
       number_bell: "7"
+
+  decorators:
+    statement:
+      succeed: "Succeed"
+      unsucceed: "Unsucceed"
+      up: "Up"
+      down: "Down"
+
   devise:
     confirmations:
       new:
@@ -133,6 +141,11 @@ en:
       create_unsuccess: "Create unsuccessful!"
       fund_updated: "Fund updated"
       you_not_permited: "You not permited"
+    statements_controller:
+      created: "Statement created!"
+      create_unsuccess: "Create unsuccessful!"
+      statement_not_found: "Statement not found"
+      user_fund_not_found: "User fund not found"
 
   funds:
     form:
@@ -158,3 +171,47 @@ en:
     user_fields:
       mail_contributor: "Email's contributor"
       remove_contributors: "Remove contributors"
+    index:
+      funds: "Funds"
+      fund_name: "Fund name"
+      total_money: "Total money"
+      create_at: "Create at"
+      update_at: "Update at"
+
+  statements:
+    form:
+      money: "Money"
+      enter_money: "Enter money"
+      guess: "Guess"
+      enter_guess: "Enter guess"
+      stop_loss: "Stop loss"
+      enter_stop_loss: "Enter stop loss"
+      take_profit: "Take profit"
+      enter_take_profit: "Enter take profit"
+      loss: "Loss"
+      enter_loss: "Enter loss"
+      profit: "Profit"
+      enter_profit: "Enter profit"
+      form_cancel: "Cancel"
+    edit:
+      add_new_statement: "Add new statement"
+      edit_statement: "Edit statement"
+      submit: "Save"
+    new:
+      submit: "Create"
+      add_new_statement: "Add new statement"
+      create_statement: "Create statement"
+    show:
+      create_at: "Create at"
+      update_at: "Update at"
+      edit_but: "Edit"
+    index:
+      statements: "Statements"
+      date: "Date"
+      money: "Money"
+      guess: "Guess"
+      stop_loss: "Stop loss"
+      take_profit: "Take profit"
+      status: "Status"
+      loss: "Loss"
+      profit: "Profit"
