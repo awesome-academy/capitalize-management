@@ -9,5 +9,3 @@
 //= require alert
 //= require dashboard
 //= require dropify
-//= require cocoon
-//= require_tree .

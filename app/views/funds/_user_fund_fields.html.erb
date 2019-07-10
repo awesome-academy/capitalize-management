@@ -1,0 +1,32 @@
+<tr>
+  <%= fields_for "fund[user_funds_attributes][#{data[:key]}]" do |uf| %>
+    <% if data[:u].id %>
+      <%= uf.hidden_field :user_id, value: data[:u].id %>
+    <% end %>
+    <%= uf.fields_for "user_attributes" do |u| %>
+      <td>
+        <div class="form-control" readonly><%= data[:u].email %></div>
+        <% unless data[:u].id %>
+          <%= u.hidden_field :email, value: data[:u].email %>
+          <%= u.hidden_field :skip_password_validation, value: true %>
+        <% end %>
+      </td>
+    <% end %>
+    <%= uf.fields_for "histories_attributes[#{data[:key]}]" do |h| %>
+      <td>
+        <div class="input-group">
+          <%= h.number_field :money, value: data[:h].money, class: "money form-control"  %>
+          <div class="input-group-append">
+            <span class="input-group-text">USD</span>
+          </div>
+        </div>
+        <%= h.hidden_field :status, value: true %>
+      </td>
+    <% end %>
+    <td><%= label_tag data[:u].decorate.user_badge[:name], nil, class: data[:u].decorate.user_badge[:class] %></td>
+    <td><i class="mdi mdi-worker text-info"></i></td>
+  <% end %>
+  <td><a href="#" onclick="$(this).closest('tr').remove()">
+    <i class="mdi mdi-delete text-danger"></i></a>
+  </td>
+</tr>

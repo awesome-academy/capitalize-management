@@ -13,3 +13,9 @@ statements:
 registrations:
   edit:
     phone_number_default:  "'alias': '999-999-9999'"
+
+random_key: 1_000_000
+views:
+  funds:
+    form:
+      default_money: 0
