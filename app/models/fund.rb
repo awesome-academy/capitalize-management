@@ -1,15 +1,8 @@
 class Fund < ApplicationRecord
-  has_many :user_funds, dependent: :destroy
-  has_many :users, through: :user_funds
-
-  accepts_nested_attributes_for :user_funds, reject_if: :duplicate, allow_destroy: true
-
-  validates_presence_of :name
 
   FUND_PARAMS = [:name,
     :total_money,
-    :created_at,
-    :updated_at,
+    :founder_id,
     {user_funds_attributes: [
       {user_attributes: [:email, :skip_password_validation]},
       {histories_attributes: [:money, :status]},
@@ -17,6 +10,13 @@ class Fund < ApplicationRecord
       :user_id
     ]}
   ].freeze
+
+  has_many :user_funds, dependent: :destroy
+  has_many :users, through: :user_funds, dependent: :destroy
+
+  accepts_nested_attributes_for :user_funds, reject_if: :duplicate, allow_destroy: true
+
+  validates_presence_of :name
 
   scope :list, (lambda do
     select :id, :name, :total_money, :created_at, :updated_at

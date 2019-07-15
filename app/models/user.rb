@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, :confirmable
   has_many :user_funds, dependent: :destroy
-  has_many :funds, through: :user_funds
+  has_many :funds, through: :user_funds, dependent: :destroy
   has_one_attached :avatar
   before_save :avatar_nil
 
@@ -19,7 +19,7 @@ class User < ApplicationRecord
   private
   def set_password
     if skip_password_validation
-      self.password = Devise.friendly_token.first(Settings.random_pw)
+      self.password = Devise.friendly_token.first(Settings.controller.funds_controller.random_pw)
       self.password_confirmation = password
     end
   end

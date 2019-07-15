@@ -1,9 +1,10 @@
-class FundsController < ApplicationController
+  class FundsController < ApplicationController
   before_action :authenticate_user!
   before_action :load_fund, except: %i(new create index add_user)
 
   def index
-    @pagy, @funds = pagy Fund.list, items: Settings.controller.funds_controller.page
+    @pagy, @fund_details = pagy UserFund.fund_index(current_user.id),
+      items: Settings.controller.funds_controller.page
   end
 
   def show; end
@@ -30,11 +31,19 @@ class FundsController < ApplicationController
   def edit; end
 
   def update
-    if @fund.update fund_params
-      flash[:success] = t(".fund_updated")
-      redirect_to funds_path
-    else
-      render :edit
+    @fund.update name: fund_params[:name]
+    if @user_fund = UserFund.find_by(id: fund_params[:founder_id])
+      @user_fund.set_founder
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def destroy
+    @fund.destroy
+    respond_to do |format|
+      format.js
     end
   end
 

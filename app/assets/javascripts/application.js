@@ -1,3 +1,4 @@
+//= require sweet_alert_confirm
 //= require rails-ujs
 //= require activestorage
 //= require off-canvas

@@ -26,4 +26,13 @@
     return sum
   }
 
+  $('tbody').bind('ajax:send', function(xhr){
+    $('.modal').modal('hide');
+  })
 })(jQuery);
+
+$(document).ready(function() {
+  if($(".js-example-basic-single").length){
+    $(".js-example-basic-single").select2();
+  }
+});

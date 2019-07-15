@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   }
   root "static_pages#home"
 
-  resources :funds, expect: %i(destroy) do
+  resources :funds do
     post "add_user", on: :collection
     resources :statements, expect: %i(destroy update)
   end

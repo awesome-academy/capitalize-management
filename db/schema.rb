@@ -50,10 +50,8 @@ ActiveRecord::Schema.define(version: 2019_07_03_084624) do
   create_table "funds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "total_money"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_funds_on_user_id"
   end
 
   create_table "histories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,18 +91,20 @@ ActiveRecord::Schema.define(version: 2019_07_03_084624) do
   create_table "user_funds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "current_money", default: 0
     t.integer "money_limit", default: 0
+    t.boolean "founder", default: false
+    t.bigint "founder_id"
     t.bigint "user_id"
     t.bigint "fund_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["founder_id"], name: "index_user_funds_on_founder_id"
     t.index ["fund_id"], name: "index_user_funds_on_fund_id"
     t.index ["user_id"], name: "index_user_funds_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
-    t.string "name"
-    t.string "encrypted_password", default: "", null: false
+    t.string "encrypted_password", default: ""
     t.string "mobile_number"
     t.text "address"
     t.string "facebook"
@@ -139,7 +139,6 @@ ActiveRecord::Schema.define(version: 2019_07_03_084624) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "days", "user_funds"
   add_foreign_key "days", "weeks"
-  add_foreign_key "funds", "users"
   add_foreign_key "histories", "user_funds"
   add_foreign_key "statements", "user_funds"
   add_foreign_key "user_funds", "funds"
