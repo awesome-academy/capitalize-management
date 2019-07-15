@@ -2,7 +2,6 @@ controller:
   funds_controller:
     page: 10
     random_pw: 8
-    page: 1
   statements_controller:
     page: 5
 

@@ -7,6 +7,11 @@ en:
     user:
       exist: "Exist"
       not_exist: "New"
+    statement:
+      succeed: "Succeed"
+      unsucceed: "Unsucceed"
+      up: "Up"
+      down: "Down"
 
   layouts:
     navbar:
@@ -14,13 +19,6 @@ en:
       profile: "Profile"
       signout: "Signout"
       number_bell: "7"
-
-  decorators:
-    statement:
-      succeed: "Succeed"
-      unsucceed: "Unsucceed"
-      up: "Up"
-      down: "Down"
 
   devise:
     confirmations:
@@ -195,8 +193,15 @@ en:
       funds: "Funds"
       fund_name: "Fund name"
       total_money: "Total money"
-      create_at: "Create at"
-      update_at: "Update at"
+      founder: "Founder"
+      action: "Action"
+    edit_modal:
+      edit_fund: "Edit Fund"
+      name: "Name"
+      enter_name: "Enter name"
+      founder: "Select Founder"
+      save: "Save"
+      form_cancel: "Cancel"
 
   statements:
     form:

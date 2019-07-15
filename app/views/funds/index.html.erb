@@ -1,6 +1,6 @@
 <%= provide :title, t(".funds") %>
 
-<div class="row mt-4">
+<div class="row">
   <div class="col-md-12">
     <div class="card">
       <div class="card-body">
@@ -10,16 +10,18 @@
             <tr>
               <th><%= t ".fund_name" %></th>
               <th><%= t ".total_money" %></th>
-              <th><%= t ".created_at" %></th>
-              <th><%= t ".update_at" %></th>
+              <th><%= t ".founder" %></th>
+              <th><%= t ".action" %></th>
             </tr>
           </thead>
           <tbody>
-            <%= render @funds %>
+            <%= render partial: "fund_detail", collection: @fund_details %>
           </tbody>
         </table>
-        <%== pagy_nav(@pagy) %>
+        <%= pagy_bootstrap_nav(@pagy).html_safe %>
       </div>
     </div>
   </div>
 </div>
+
+<%= javascript_include_tag "fund" %>

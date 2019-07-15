@@ -1,0 +1,12 @@
+<tr id=<%= fund_detail.fund_id %> >
+  <td class="fund_name"><%= fund_detail.fund.name %></td>
+  <td><%= fund_detail.fund.total_money %></td>
+  <td class="founder_name"><%= fund_detail.founder_user.name %></td>
+  <td>
+    <%= link_to fund_path(fund_detail.fund_id) do %><i class="mdi mdi-eye text-success"></i><% end %>
+    <%= link_to fund_path(fund_detail.fund_id), data: {toggle: "modal", target: "#edit_form#{fund_detail.fund_id}", whatever: "@mdo"} do %><i class="mdi mdi-table-edit text-primary"></i><% end %>
+    <%= link_to fund_path(fund_detail.fund_id), remote: true, method: :delete, data: {confirm_swal: "Are you sure?"} do %>
+      <i class="mdi mdi-delete text-danger"></i><% end %>
+  </td>
+  <%= render "edit_modal", fund: fund_detail.fund %>
+</tr>

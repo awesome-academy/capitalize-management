@@ -1,0 +1,27 @@
+<% if @fund.errors.empty? %>
+  $('<%= "##{@fund.id}" %>').children('.fund_name').html('<%= @fund.name %>');
+  $('<%= "##{@fund.id}" %>').children('.founder_name').html('<%= @user_fund.user.name %>');
+
+  swal({
+    title: 'Congratulations!',
+    text: 'You delete fund success',
+    icon: 'success',
+    button: {
+      text: "Continue",
+      value: true,
+      visible: true,
+      className: "btn btn-primary"
+    }
+  })
+<% else %>
+  swal({
+    title: 'Read the alert!',
+    text: <% object.errors.full_messages.each do |msg| %><%= msg %><% end %>,
+    button: {
+      text: "OK",
+      value: true,
+      visible: true,
+      className: "btn btn-primary"
+    }
+  })
+<% end %>
