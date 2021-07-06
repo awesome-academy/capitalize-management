@@ -1,4 +1,4 @@
-(function ($) {
+$(document).ready(function() {
   var color = {'error': '#f2a654', 'info': '#46c35f', 'success': '#f96868', 'warning': '#57c7d4'}
 
   showError = function(msg) {
@@ -22,4 +22,4 @@
       position: 'top-right'
     });
   }
-})(jQuery);
+});
