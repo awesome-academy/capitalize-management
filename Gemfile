@@ -26,7 +26,7 @@ gem "sass-rails", "~> 5.0"
 gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 gem "webpacker", "~> 4.x"
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.12"
 gem "cocoon"
 
 group :development, :test do
